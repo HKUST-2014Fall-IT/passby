@@ -1,1 +1,3 @@
-# An Android app by Rio Ho, Kevin Wang and Cedric Liang
+# Passers-by
+
+## Author: Cedric Liang, Kevin Wong and Kidd Ho
