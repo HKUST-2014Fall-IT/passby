@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    
+    <TextView 
+        android:id="@+id/nameTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/nickname_title"
+        android:textSize="24sp"/>
+    
+    <EditText 
+        android:layout_below="@id/nameTitle"
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#333333"
+        android:hint="@string/nickname"
+        android:layout_marginBottom="20dp"/>
+    
+    <TextView 
+        android:layout_below="@id/nickname"
+        android:id="@+id/genderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/gender_title"
+        android:textSize="24sp"/>
+    
+    <RadioGroup 
+        android:layout_below="@id/genderTitle"
+        android:id="@+id/genderGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton 
+            android:id="@+id/fButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_f"
+            android:layout_marginBottom="8dp"
+            android:checked="true"/>
+        <RadioButton 
+            android:id="@+id/mButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_m"/>
+    </RadioGroup>
+    
+    <Button 
+        android:layout_alignParentBottom="true"
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textSize="24sp"
+        android:textColor="#333333"/>
+    
+</RelativeLayout>
