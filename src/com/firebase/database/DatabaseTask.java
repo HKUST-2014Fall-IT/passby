@@ -24,8 +24,13 @@ public class DatabaseTask extends AsyncTask<String, String, String> {
 	protected String doInBackground(String... params) {
 		// do query
 		ContentValues cv = this.dbManager.query();
-		if(cv.containsKey("nickname"))
+		if(cv.containsKey("nickname")){
 			flag = "true"; // has set user's info
+			
+			// init User obj
+			User.getInstance().setNickname(cv.getAsString("nickname"));
+			User.getInstance().setGender(cv.getAsInteger("gender"));
+		}
 		else
 			flag = "false"; // hasnt set user's info
 		return flag;
