@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -19,7 +20,7 @@ public class MainActivity extends ListActivity {
     // TODO: change this to your own Firebase URL
     private static final String FIREBASE_URL = "https://resplendent-heat-9366.firebaseio.com/";
 
-    private String username;
+    private String username, chatRoom;
     private Firebase ref;
     private ValueEventListener connectedListener;
     private ChatListAdapter chatListAdapter;
@@ -30,9 +31,11 @@ public class MainActivity extends ListActivity {
         setContentView(R.layout.activity_main);
 
         // Make sure we have a username
-        setupUsername();
+        //setupUsername();
+        this.username = getIntent().getStringExtra("nickname");
+        this.chatRoom = getIntent().getStringExtra("chatRoom");
 
-        setTitle("Chatting as " + username);
+        setTitle("Chatting as " + this.username);
 
         // Setup our Firebase ref
         ref = new Firebase(FIREBASE_URL).child("room1");
