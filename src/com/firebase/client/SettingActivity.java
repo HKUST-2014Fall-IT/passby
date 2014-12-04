@@ -7,6 +7,7 @@ import android.R.integer;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.DropBoxManager;
@@ -37,8 +38,6 @@ public class SettingActivity extends Activity {
 		
 		initComponent();
 		
-		//deleteDatabase("PASSERBY.db");
-		
 		save_btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -57,6 +56,9 @@ public class SettingActivity extends Activity {
 					uptUser(prevName);
 					Log.i("SET USER", "in update table");
 				}
+				
+				Intent intent = new Intent(SettingActivity.this, LocateActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
