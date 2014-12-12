@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Passby</string>
+    <string name="app_name">Passer-by</string>
+    <string name="launch_des">launch image</string>
+    
+    <!-- Locate Activity -->
+    <string name="processName_locate">Get My Location</string>
+    <string name="autoLocate">Auto Locate Me</string>
+    <string name="or">OR</string>
+    <string name="inputRoom">Input Room Info</string>
+    <string name="manualLocate">Manually Locate Me</string>
+    
+    <!-- Search Result Activity -->
+    <string name="processName_searchResult">Search Result</string>
+    
+    <!-- Settings Activity -->
+    <string name="processName_settings">Settings</string>
+    <string name="nickname_title">Nickname</string>
+    <string name="nickname">Input A Name</string>
+    <string name="gender_title">Gender</string>
+    <string name="gender_f">F</string>
+    <string name="gender_m">M</string>
+    <string name="save">Save</string>
 
 </resources>

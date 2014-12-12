@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -16,10 +17,10 @@ import java.util.Random;
 
 public class MainActivity extends ListActivity {
 
-    // TODO: change this to your own Firebase URL
+    // database URL
     private static final String FIREBASE_URL = "https://resplendent-heat-9366.firebaseio.com/";
 
-    private String username;
+    private String username, chatRoom;
     private Firebase ref;
     private ValueEventListener connectedListener;
     private ChatListAdapter chatListAdapter;
@@ -29,13 +30,15 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Make sure we have a username
-        setupUsername();
+        
+        //setupUsername();
+        this.username = getIntent().getStringExtra("nickname");
+        this.chatRoom = getIntent().getStringExtra("chatRoom");
 
-        setTitle("Chatting as " + username);
+        setTitle("Chatting as " + this.username);
 
-        // Setup our Firebase ref
-        ref = new Firebase(FIREBASE_URL).child("room1");
+        // Setup our database ref
+        ref = new Firebase(FIREBASE_URL).child(this.chatRoom);
 
         // Setup our input methods. Enter key on the keyboard or pushing the send button
         EditText inputText = (EditText)findViewById(R.id.messageInput);
@@ -63,7 +66,6 @@ public class MainActivity extends ListActivity {
         super.onStart();
         // Setup our view and list adapter. Ensure it scrolls to the bottom as data changes
         final ListView listView = getListView();
-        // Tell our list adapter that we only want 20 messages at a time
         chatListAdapter = new ChatListAdapter(ref.limit(20), this, R.layout.chat_message, username);
         listView.setAdapter(chatListAdapter);
         chatListAdapter.registerDataSetObserver(new DataSetObserver() {
@@ -74,7 +76,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        // Finally, a little indication of connection status
+        // A little indication of connection status
         connectedListener = ref.getRoot().child(".info/connected").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -105,7 +107,6 @@ public class MainActivity extends ListActivity {
         username = prefs.getString("username", null);
         if (username == null) {
             Random r = new Random();
-            // Assign a random user name if we don't have one saved.
             username = "JavaUser" + r.nextInt(100000);
             prefs.edit().putString("username", username).commit();
         }

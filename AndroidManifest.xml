@@ -5,6 +5,7 @@
     android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -15,17 +16,31 @@
         android:icon="@drawable/firebase_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
         <activity
-            android:name="MainActivity"
-            android:label="@string/app_name"
-            >
+            android:name="com.firebase.client.LaunchActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+        <activity
+            android:name="com.firebase.client.SearchResultActivity"
+            android:label="@string/processName_searchResult">
+        </activity>
+        <activity
+            android:name="com.firebase.client.SettingActivity"
+            android:label="@string/processName_settings">
+        </activity>
+        <activity
+            android:name="com.firebase.client.LocateActivity"
+            android:label="@string/processName_locate">
+        </activity>
+        <activity
+            android:name="MainActivity"
+            android:label="@string/app_name">
+        </activity>
     </application>
 
 </manifest>

@@ -1,10 +1,5 @@
 package com.firebase.androidchat;
 
-/**
- * User: greg
- * Date: 6/21/13
- * Time: 2:38 PM
- */
 public class Chat {
 
     private String message;
