@@ -1,8 +1,8 @@
+//#CSIT6000B#  Rio He       20227977 yheas@connect.ust.hk
+//#CSIT6000B#  Cedric Liang 20220395 zliangag@connect.ust.hk
+//#CSIT6000B#  Kevin Wang   20225577 zwangbo@connect.ust.hk 
 package com.firebase.client;
 
-import java.util.Set;
-
-import com.firebase.*;
 import com.firebase.androidchat.R;
 
 import android.app.Activity;
@@ -12,7 +12,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;

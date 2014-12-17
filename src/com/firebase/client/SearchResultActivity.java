@@ -1,18 +1,19 @@
+//#CSIT6000B#  Rio He       20227977 yheas@connect.ust.hk
+//#CSIT6000B#  Cedric Liang 20220395 zliangag@connect.ust.hk
+//#CSIT6000B#  Kevin Wang   20225577 zwangbo@connect.ust.hk 
 package com.firebase.client;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import com.firebase.androidchat.*;
 import com.firebase.database.User;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -95,6 +96,7 @@ public class SearchResultActivity extends Activity {
 			}
 		}
 
+		@SuppressLint("ViewHolder")
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);

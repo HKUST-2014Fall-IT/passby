@@ -1,3 +1,6 @@
+//#CSIT6000B#  Rio He       20227977 yheas@connect.ust.hk
+//#CSIT6000B#  Cedric Liang 20220395 zliangag@connect.ust.hk
+//#CSIT6000B#  Kevin Wang   20225577 zwangbo@connect.ust.hk  
 package com.firebase.database;
 
 import android.annotation.SuppressLint;
@@ -6,7 +9,6 @@ import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;

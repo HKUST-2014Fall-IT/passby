@@ -1,3 +1,6 @@
+//#CSIT6000B#  Rio He       20227977 yheas@connect.ust.hk
+//#CSIT6000B#  Cedric Liang 20220395 zliangag@connect.ust.hk
+//#CSIT6000B#  Kevin Wang   20225577 zwangbo@connect.ust.hk 
 package com.firebase.client;
 
 import com.firebase.androidchat.R;
@@ -5,7 +8,6 @@ import com.firebase.database.*;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;

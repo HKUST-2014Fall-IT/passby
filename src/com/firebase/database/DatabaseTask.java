@@ -1,3 +1,6 @@
+//#CSIT6000B#  Rio He       20227977 yheas@connect.ust.hk
+//#CSIT6000B#  Cedric Liang 20220395 zliangag@connect.ust.hk
+//#CSIT6000B#  Kevin Wang   20225577 zwangbo@connect.ust.hk 
 package com.firebase.database;
 
 import com.firebase.client.LocateActivity;
@@ -7,8 +10,6 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.sax.StartElementListener;
-import android.util.Log;
 
 public class DatabaseTask extends AsyncTask<String, String, String> {
 	private DatabaseManager dbManager;

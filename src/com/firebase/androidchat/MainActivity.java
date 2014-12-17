@@ -1,10 +1,11 @@
+//#CSIT6000B#  Rio He       20227977 yheas@connect.ust.hk
+//#CSIT6000B#  Cedric Liang 20220395 zliangag@connect.ust.hk
+//#CSIT6000B#  Kevin Wang   20225577 zwangbo@connect.ust.hk 
 package com.firebase.androidchat;
 
 import android.app.ListActivity;
-import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -12,8 +13,6 @@ import android.widget.*;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.ValueEventListener;
-
-import java.util.Random;
 
 public class MainActivity extends ListActivity {
 
@@ -30,8 +29,6 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
-        //setupUsername();
         this.username = getIntent().getStringExtra("nickname");
         this.chatRoom = getIntent().getStringExtra("chatRoom");
 
@@ -100,16 +97,6 @@ public class MainActivity extends ListActivity {
         super.onStop();
         ref.getRoot().child(".info/connected").removeEventListener(connectedListener);
         chatListAdapter.cleanup();
-    }
-
-    private void setupUsername() {
-        SharedPreferences prefs = getApplication().getSharedPreferences("ChatPrefs", 0);
-        username = prefs.getString("username", null);
-        if (username == null) {
-            Random r = new Random();
-            username = "JavaUser" + r.nextInt(100000);
-            prefs.edit().putString("username", username).commit();
-        }
     }
 
     private void sendMessage() {
